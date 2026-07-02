@@ -1,4 +1,4 @@
- name: Testyn Trigger Test
+name: Testyn Trigger Test
 
   on:
     workflow_dispatch:
