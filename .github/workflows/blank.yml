@@ -1,0 +1,25 @@
+ name: Testyn Trigger Test
+
+  on:
+    workflow_dispatch:
+      inputs:
+        message:
+          description: Optional message
+          required: false
+          default: Hello from Testyn
+
+  jobs:
+    ping:
+      name: Ping
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print trigger info
+          run: |
+            echo "Triggered by: ${{ github.actor }}"
+            echo "Branch: ${{ github.ref_name }}"
+            echo "Message: ${{ inputs.message }}"
+            echo "Run ID: ${{ github.run_id }}"
+            sleep 5
+
+        - name: Done
+          run: echo "Workflow complete"
