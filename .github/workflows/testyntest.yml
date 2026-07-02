@@ -1,14 +1,13 @@
 name: Testyn Trigger Test
 
-  on:
+on:
     workflow_dispatch:
       inputs:
         message:
           description: Optional message
           required: false
           default: Hello from Testyn
-
-  jobs:
+jobs:
     ping:
       name: Ping
       runs-on: ubuntu-latest
